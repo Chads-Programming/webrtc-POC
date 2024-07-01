@@ -4,7 +4,14 @@
   "license": "MIT",
   "main": "index.js",
   "workspaces": [
-    "apps"
+    "apps/*"
   ],
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.6",
+    "typescript": "^5.5.2"
+  },
   "packageManager": "yarn@4.3.1"
 }
