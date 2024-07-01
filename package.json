@@ -1,0 +1,10 @@
+{
+  "name": "webrtc-poc",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "workspaces": [
+    "apps"
+  ],
+  "packageManager": "yarn@4.3.1"
+}
