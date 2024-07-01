@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "rootDir": ".",
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules"]
 }
