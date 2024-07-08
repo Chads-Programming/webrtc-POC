@@ -8,6 +8,7 @@ interface Payload {
 }
 export function RTCView() {
   const [offer, setOffer] = useState("");
+  const [remoteOffer, setRemoteOffer] = useState("");
   const userVideo = useRef<HTMLVideoElement>(null);
   const remoteVideo = useRef<HTMLVideoElement>(null);
   const userStream = useRef<MediaStream>();
@@ -114,6 +115,7 @@ export function RTCView() {
 
   function handleAnswer(incoming: Payload) {
     const description = new RTCSessionDescription(incoming.sdp);
+    setRemoteOffer(incoming.sdp.sdp);
     peerRef.current?.setRemoteDescription(description);
   }
 
@@ -164,7 +166,11 @@ export function RTCView() {
       <video autoPlay ref={remoteVideo} />
       <div>
         <p>Offer</p>
-        <p>{offer}</p>
+        <p style={{ fontSize: 6 }}>{offer}</p>
+      </div>
+      <div>
+        <p>Incoming</p>
+        <p style={{ fontSize: 6 }}>{remoteOffer}</p>
       </div>
     </div>
   );
